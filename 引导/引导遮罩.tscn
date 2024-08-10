@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwroov6l2gdwf"]
+
+[ext_resource type="Shader" path="res://引导/resource/引导遮罩.gdshader" id="1_aty0n"]
+[ext_resource type="Script" path="res://引导/引导遮罩.gd" id="2_s1m1w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wrdeb"]
+shader = ExtResource("1_aty0n")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8c1lk"]
+blend_mode = 2
+
+[node name="引导遮罩" type="ColorRect"]
+clip_children = 1
+material = SubResource("ShaderMaterial_wrdeb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_s1m1w")
+
+[node name="Mask" type="ColorRect" parent="."]
+material = SubResource("CanvasItemMaterial_8c1lk")
+layout_mode = 0
+offset_left = 558.0
+offset_top = 195.0
+offset_right = 801.0
+offset_bottom = 415.0
+mouse_filter = 2

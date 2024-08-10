@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://clic5r76hpkhb"]
+
+[ext_resource type="Script" path="res://引导/引导场景.gd" id="1_7lbm1"]
+[ext_resource type="PackedScene" uid="uid://dmdgt3axswbej" path="res://引导/小手动效/小手动效.tscn" id="2_rxmvc"]
+
+[node name="引导场景" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7lbm1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.376471)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 921.0
+offset_top = 114.0
+offset_right = 1028.0
+offset_bottom = 173.0
+text = "跳过引导"
+
+[node name="小手动效" parent="." instance=ExtResource("2_rxmvc")]
+layout_mode = 1
+offset_left = 980.0
+offset_top = 148.0
+offset_right = -73.0
+offset_bottom = -399.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

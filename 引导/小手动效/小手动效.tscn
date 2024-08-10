@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmdgt3axswbej"]
+
+[ext_resource type="Script" path="res://引导/小手动效/小手动效.gd" id="1_6yqfy"]
+[ext_resource type="Texture2D" uid="uid://ciopoeea7mmr4" path="res://引导/小手动效/resource/手.png" id="2_qiptx"]
+[ext_resource type="Shader" path="res://屏幕点击特效/白色圆环.gdshader" id="3_ik7nb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2n0y2"]
+shader = ExtResource("3_ik7nb")
+shader_parameter/width = 0.1
+
+[sub_resource type="Curve" id="Curve_i81r6"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.492537, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_f00bq"]
+curve = SubResource("Curve_i81r6")
+
+[sub_resource type="Curve" id="Curve_nqnvf"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2iov8"]
+curve = SubResource("Curve_nqnvf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uwdq3"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 191.79
+scale_max = 191.79
+scale_curve = SubResource("CurveTexture_2iov8")
+color = Color(1, 1, 1, 0.360784)
+alpha_curve = SubResource("CurveTexture_f00bq")
+
+[node name="小手动效" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_6yqfy")
+
+[node name="手" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_qiptx")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="光圈特效" type="GPUParticles2D" parent="."]
+material = SubResource("ShaderMaterial_2n0y2")
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_uwdq3")
+lifetime = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

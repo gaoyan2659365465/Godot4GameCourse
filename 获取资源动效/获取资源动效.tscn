@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b216kugovccx4"]
+
+[ext_resource type="Script" path="res://获取资源动效/获取资源动效.gd" id="1_iuj0c"]
+[ext_resource type="Texture2D" uid="uid://bve2trmn876ga" path="res://获取资源动效/resource/钻石图标.png" id="2_5xxdl"]
+
+[node name="获取资源动效" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iuj0c")
+"图标" = ExtResource("2_5xxdl")

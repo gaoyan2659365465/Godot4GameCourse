@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://cig01qj52xbos"]
+
+[ext_resource type="Script" path="res://引导/引导对话框.gd" id="1_ows0r"]
+[ext_resource type="Texture2D" uid="uid://qojdudvgcsj7" path="res://icon.svg" id="2_b6jav"]
+[ext_resource type="Texture2D" uid="uid://ufs3b361qj87" path="res://引导/resource/箭头.png" id="3_x0lt7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vq8r4"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="引导对话框" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ows0r")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -91.0
+offset_right = 199.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vq8r4")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = -31.0
+offset_top = -52.0
+offset_right = 59.0
+offset_bottom = 38.0
+texture = ExtResource("2_b6jav")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 56.0
+offset_right = 333.0
+offset_bottom = 164.0
+theme_override_font_sizes/font_size = 26
+text = "怪物大军即将到来，赶快布置水果勇士，准备迎战吧！"
+autowrap_mode = 1
+
+[node name="箭头" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 732.0
+offset_top = 386.0
+offset_right = 746.0
+offset_bottom = 398.0
+texture = ExtResource("3_x0lt7")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

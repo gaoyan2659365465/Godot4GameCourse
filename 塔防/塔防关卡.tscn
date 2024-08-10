@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvxy204fky5c5"]
+
+[ext_resource type="Script" path="res://塔防/塔防关卡.gd" id="1_3nkkc"]
+
+[sub_resource type="Curve2D" id="Curve2D_ulesr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 438, 163, 0, 0, 0, 0, 307, 164, 0, 0, 0, 0, 332, 490, 0, 0, 0, 0, 791, 485, 0, 0, 0, 0, 859, 185, 0, 0, 0, 0, 711, 167)
+}
+point_count = 6
+
+[node name="塔防关卡" type="Node2D"]
+script = ExtResource("1_3nkkc")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ulesr")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 65.0
+offset_top = 203.0
+offset_right = 190.0
+offset_bottom = 292.0
+text = "创建敌人"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

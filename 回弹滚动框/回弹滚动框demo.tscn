@@ -1,0 +1,110 @@
+[gd_scene load_steps=3 format=3 uid="uid://fjbdc777xnk6"]
+
+[ext_resource type="Texture2D" uid="uid://qojdudvgcsj7" path="res://icon.svg" id="1_njb8y"]
+[ext_resource type="Script" path="res://回弹滚动框/回弹滚动框.gd" id="2_3xcwg"]
+
+[node name="回弹滚动框Demo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 76.0
+offset_right = 377.0
+offset_bottom = 218.0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_njb8y")
+
+[node name="Button7" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button8" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button9" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button10" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button11" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button12" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_njb8y")
+
+[node name="回弹滚动框" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 75.0
+offset_right = 624.0
+offset_bottom = 220.0
+script = ExtResource("2_3xcwg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="回弹滚动框"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="回弹滚动框/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="回弹滚动框/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="回弹滚动框/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="回弹滚动框/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="回弹滚动框/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="回弹滚动框/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_njb8y")
+
+[node name="Button7" type="Button" parent="回弹滚动框/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button8" type="Button" parent="回弹滚动框/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button9" type="Button" parent="回弹滚动框/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button10" type="Button" parent="回弹滚动框/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button11" type="Button" parent="回弹滚动框/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button12" type="Button" parent="回弹滚动框/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_njb8y")

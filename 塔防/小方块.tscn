@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn6mh6d4q4ypj"]
+
+[ext_resource type="Texture2D" uid="uid://qojdudvgcsj7" path="res://icon.svg" id="1_1qmlp"]
+[ext_resource type="Script" path="res://塔防/小方块.gd" id="1_sdbxb"]
+
+[node name="小方块" type="Node2D"]
+script = ExtResource("1_sdbxb")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("1_1qmlp")

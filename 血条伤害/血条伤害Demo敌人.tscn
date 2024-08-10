@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://djsdn1e74fbc4"]
+
+[ext_resource type="Texture2D" uid="uid://djix5or8fb1bn" path="res://血条伤害/resource/史莱姆.png" id="1_irlhk"]
+[ext_resource type="Script" path="res://血条伤害/血条伤害demo敌人.gd" id="1_je1wf"]
+[ext_resource type="Texture2D" uid="uid://bntj46gnhtaiq" path="res://血条伤害/resource/血条背景.png" id="2_uc7tg"]
+[ext_resource type="Texture2D" uid="uid://cvxwjcrdrmrsg" path="res://血条伤害/resource/血条高光.png" id="3_h4m0n"]
+[ext_resource type="Texture2D" uid="uid://5xiqodasohnu" path="res://血条伤害/resource/血条内容.png" id="4_8x1nd"]
+
+[node name="血条伤害Demo敌人" type="Node2D"]
+script = ExtResource("1_je1wf")
+
+[node name="史莱姆" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
+scale = Vector2(0.0546875, 0.0546875)
+texture = ExtResource("1_irlhk")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -20.0
+offset_top = -53.0
+offset_right = 20.0
+offset_bottom = -13.0
+value = 100.0
+texture_under = ExtResource("2_uc7tg")
+texture_progress = ExtResource("3_h4m0n")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="."]
+offset_left = -20.0
+offset_top = -53.0
+offset_right = 20.0
+offset_bottom = -13.0
+value = 100.0
+texture_progress = ExtResource("4_8x1nd")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

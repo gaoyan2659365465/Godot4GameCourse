@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://73reiy7fkyyp"]
+
+[ext_resource type="Script" path="res://引导/进入下一步.gd" id="1_oa275"]
+
+[node name="进入下一步" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_oa275")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -100.0
+offset_right = 88.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "点击任意位置进入下一步"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
